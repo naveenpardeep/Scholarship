@@ -18,7 +18,7 @@ class _ViewpageState extends State<Viewpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Text("view page  for scholarship"),
+      child: Text(widget.Country),
     ));
   }
 }
