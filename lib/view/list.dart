@@ -38,7 +38,10 @@ class _ListState extends State<List> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => Viewpage())));
+                                  builder: ((context) => Viewpage(
+                                        Country: "",
+                                        Name: "",
+                                      ))));
                         }),
                   );
                 })),
