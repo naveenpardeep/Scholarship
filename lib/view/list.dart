@@ -1,6 +1,8 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:scholarship/main.dart';
+import 'package:scholarship/view/viewpage.dart';
 
 class List extends StatefulWidget {
   const List({Key? key}) : super(key: key);
@@ -24,7 +26,21 @@ class _ListState extends State<List> {
             child: ListView.builder(
                 controller: controller,
                 itemBuilder: (BuildContext context, int index) {
-                  return Text('1');
+                  return Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)),
+                    child: ListTile(
+                        textColor: Colors.black,
+                        title: Text("Naveen"),
+                        trailing: Icon(Icons.forward),
+                        leading: Icon(Icons.school),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => Viewpage())));
+                        }),
+                  );
                 })),
       ),
     );
