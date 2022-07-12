@@ -21,7 +21,9 @@ class _ListviewState extends State<Listview> {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return Scaffold(
+      backgroundColor: Color.fromARGB(44, 174, 121, 226),
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(44, 174, 121, 226),
           title: const Text('Study Abroad'),
         ),
         body: StreamBuilder<QuerySnapshot>(
