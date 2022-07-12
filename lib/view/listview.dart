@@ -38,10 +38,9 @@ class _ListviewState extends State<Listview> {
                         child: ListView(
                           children: snapshot.data!.docs.map((doc) {
                             return Card(
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
                               child: ListTile(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(50.0)),
+                                  textColor: Colors.black,
                                   leading: Icon(Icons.school),
                                   trailing: Icon(Icons.forward),
                                   title: Text(doc['country']),
