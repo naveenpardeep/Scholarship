@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "768047613285",
+    "project_id": "study-abroad-f5d5b",
+    "storage_bucket": "study-abroad-f5d5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768047613285:android:70a91f3ec88dfc807e4d8c",
+        "android_client_info": {
+          "package_name": "com.example.scholarship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768047613285-cd7cfguokjou94vlkvc4dusqdd3i8hc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoOFsGNXf3Te8WpzuUp_mZS9u8OlcM0wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768047613285-cd7cfguokjou94vlkvc4dusqdd3i8hc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
