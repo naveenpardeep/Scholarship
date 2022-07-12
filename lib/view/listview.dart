@@ -25,7 +25,7 @@ class _ListviewState extends State<Listview> {
           title: const Text('Study Abroad'),
         ),
         body: StreamBuilder<QuerySnapshot>(
-            stream: db.collection('scho').snapshots(),
+            stream: db.collection('scholarship').snapshots(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return Center(
@@ -39,8 +39,20 @@ class _ListviewState extends State<Listview> {
                           children: snapshot.data!.docs.map((doc) {
                             return Card(
                               child: ListTile(
-                                title: Text(doc['country']),
-                              ),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(50.0)),
+                                  leading: Icon(Icons.school),
+                                  trailing: Icon(Icons.forward),
+                                  title: Text(doc['country']),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Viewpage(
+                                                Country: doc['country'],
+                                                Details: doc['details'])));
+                                  }),
                             );
                           }).toList(),
                         )));

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class Viewpage extends StatefulWidget {
   var Country;
-  var Name;
+  var Details;
 
-  Viewpage({Key? key, required this.Country, required this.Name})
+  Viewpage({Key? key, required this.Country, required this.Details})
       : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class _ViewpageState extends State<Viewpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Text(widget.Country),
+      child: Center(child: Text(widget.Details)),
     ));
   }
 }
