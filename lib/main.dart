@@ -11,7 +11,10 @@ void main() async {
   Future<InitializationStatus> _initGoogleMobileAds() {
     // TODO: Initialize Google Mobile Ads SDK
     return MobileAds.instance.initialize();
+    
   }
+  MobileAds.instance.updateRequestConfiguration(RequestConfiguration(testDeviceIds: ["02CD8231BD8956CACD32B66965E2E626"]));
+
 
   // ignore: prefer_const_constructors
   runApp(MaterialApp(
