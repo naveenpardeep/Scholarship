@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:scholarship/ads/adshelper.dart';
+import 'package:scholarship/main.dart';
+import 'package:scholarship/view/moreinfopage.dart';
 
 
 class Viewpage extends StatefulWidget {
@@ -64,8 +66,19 @@ class _ViewpageState extends State<Viewpage> {
               ),
             )
                            
-              ,     
-       Center(child: Text(widget.Details)),
+              ,  
+           
+                  Center(
+                    child: Text(widget.Details,
+                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+               Positioned(bottom: 0 ,child: 
+                 ElevatedButton(onPressed: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Moreinfopage()),
+  );
+}, child: const Text('Click Here for more info')))
+
                   ]
     ))
         );

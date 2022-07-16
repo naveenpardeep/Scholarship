@@ -69,17 +69,8 @@ void initState() {
                 return SafeArea(
                 child:  Stack
                 (children: [
-                  if (_bannerAd != null) 
-                             Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                width: _bannerAd!.size.width.toDouble(),
-                height: _bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _bannerAd!),
-              ),
-            )
-                           
-                           ,
+                  
+                
                      Scrollbar(
                         controller: controller,
                         child: 
@@ -106,6 +97,18 @@ void initState() {
                           );
                           }).toList(),
                         ))
+                      ,
+                        if (_bannerAd != null) 
+                Positioned( top: 0, child:  Align(
+              alignment: Alignment.topCenter,
+              child: Container( 
+                width: _bannerAd!.size.width.toDouble(),
+                height: _bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _bannerAd!),
+              ),
+            ))
+                           
+                           ,
                         ]
                 ));
               }
