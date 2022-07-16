@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:scholarship/ads/adshelper.dart';
 import 'package:scholarship/main.dart';
-import 'package:scholarship/view/moreinfopage.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class Viewpage extends StatefulWidget {
   var Country;
   var Details;
-
-  Viewpage({Key? key, required this.Country, required this.Details})
+  var url;
+  Viewpage({Key? key, required this.Country, required this.Details,required this.url})
       : super(key: key);
 
   @override
@@ -21,11 +22,12 @@ class Viewpage extends StatefulWidget {
 class _ViewpageState extends State<Viewpage> {
  // TODO: Add _bannerAd
   BannerAd? _bannerAd;
-
+  late Uri uri;
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
+  uri=Uri.parse(widget.url);
   // TODO: Load a banner ad
   BannerAd(
     adUnitId: AdHelper.bannerAdUnitId,
@@ -72,12 +74,17 @@ class _ViewpageState extends State<Viewpage> {
                     child: Text(widget.Details,
                     style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
                Positioned(bottom: 0 ,child: 
-                 ElevatedButton(onPressed: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Moreinfopage()),
-  );
-}, child: const Text('Click Here for more info')))
+                 ElevatedButton(onPressed: () async{ 
+                   if(await canLaunchUrl(uri))  {
+     await launchUrl(uri,
+     mode: LaunchMode.externalApplication,
+     webViewConfiguration: const WebViewConfiguration(enableJavaScript: true)
+      
+     
+      
+      );
+  }
+  }, child: const Text('Click Here for more info')))
 
                   ]
     ))
@@ -85,4 +92,5 @@ class _ViewpageState extends State<Viewpage> {
 
 
   }
+
 }

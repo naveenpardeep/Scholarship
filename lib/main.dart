@@ -13,7 +13,7 @@ void main() async {
     return MobileAds.instance.initialize();
     
   }
-  MobileAds.instance.updateRequestConfiguration(RequestConfiguration(testDeviceIds: ["02CD8231BD8956CACD32B66965E2E626"]));
+ // MobileAds.instance.updateRequestConfiguration(RequestConfiguration(testDeviceIds: ["02CD8231BD8956CACD32B66965E2E626"]));
 
 
   // ignore: prefer_const_constructors

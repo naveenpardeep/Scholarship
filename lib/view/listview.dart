@@ -92,7 +92,8 @@ void initState() {
                                       MaterialPageRoute(
                                           builder: (context) => Viewpage(
                                               Country: doc['country'],
-                                              Details: doc['details'])));
+                                              Details: doc['details'],
+                                              url: doc['link'],)));
                                 }),
                           );
                           }).toList(),
