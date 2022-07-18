@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:scholarship/ads/adshelper.dart';
 import 'package:scholarship/main.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Viewpage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ViewpageState extends State<Viewpage> {
   late Uri uri;
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     uri = Uri.parse(widget.url);
     // TODO: Load a banner ad
@@ -53,9 +54,14 @@ class _ViewpageState extends State<Viewpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
         appBar: AppBar(
             title: Text(widget.Country),
+            actions:<Widget> [
+              IconButton(onPressed: sharemethod, icon: Icon(Icons.share))
+            ],
             backgroundColor: Color.fromARGB(44, 15, 14, 71)),
+            
         body: SafeArea(
          child:   Scrollbar(
                         controller: controller,
@@ -76,13 +82,14 @@ class _ViewpageState extends State<Viewpage> {
                 child: SelectableText(
               widget.Details,
               style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
             )),
           ),
           Positioned(
             right: 0,
               bottom: 0,
-              child: ElevatedButton(
+              child: ElevatedButton(style:  ElevatedButton.styleFrom(
+                primary: Colors.green,),
                   onPressed: () async {
                     if (await canLaunchUrl(uri)) {
                       await launchUrl(uri,
@@ -91,7 +98,12 @@ class _ViewpageState extends State<Viewpage> {
                               enableJavaScript: true));
                     }
                   },
-                  child: const Text('Click Here for more info')))
+                  child:  Text('Click Here for more info',style: TextStyle(color: Colors.black),)))
         ]))));
+  }
+
+  void sharemethod() {
+    Share.share(widget.Details);
+   
   }
 }

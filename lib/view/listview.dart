@@ -59,7 +59,7 @@ void initState() {
           title: const Text('Study Abroad'),
         ),
         body: StreamBuilder<QuerySnapshot>(
-            stream: db.collection('scholarship').snapshots(),
+            stream: db.collection('scholarship').orderBy('country').snapshots(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return Center(
@@ -76,15 +76,16 @@ void initState() {
                         child: 
                           
                            ListView(
-                          children: snapshot.data!.docs.map((doc) {
+                          children: snapshot.data!.docs.map((doc){
                            
 
-                          return Card(
+                          return Card( color: Colors.black,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
                             child: ListTile(
-                                textColor: Colors.black,
-                                leading: Icon(Icons.school),
-                                trailing: Icon(Icons.forward),
+                              
+                                textColor: Colors.green,
+                                leading: Icon(Icons.school,color: Colors.green,),
+                                trailing: Icon(Icons.forward,color: Colors.green,),
                                 title: Text(doc['country']),
                                 onTap: () {
                                   Navigator.push(
