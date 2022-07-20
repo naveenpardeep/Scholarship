@@ -51,9 +51,9 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
+    // ignore: prefer_const_constructorsr
     return Scaffold(
-      backgroundColor: Color.fromARGB(44, 174, 121, 226),
+      backgroundColor: Color.fromARGB(44, 157, 140, 173),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(44, 174, 121, 226),
           title: const Text('New Open Positions'),
@@ -79,20 +79,20 @@ void initState() {
                           children: snapshot.data!.docs.map((doc){
                            
                      return Container(
-                               height: 150,
+                               height: 250,
                           child: 
                            Card( 
                                 
                           color: Colors.black,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
+                            shape:  RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(60),bottomRight: Radius.circular(60))),
                             child: ListTile(
                                
                               contentPadding: const EdgeInsets.fromLTRB(40,1,40,20),
-                                textColor: Colors.green,
+                                textColor: Colors.white,
                               //  leading: Icon(Icons.school,color: Colors.green,),
                               //  trailing: Icon(Icons.forward,color: Colors.green,textDirection: TextDirection.ltr,),
                                 title: Text(doc['title'],textAlign: TextAlign.center,textScaleFactor: 1.5,),
-                                subtitle: Text(doc['details'],maxLines: 4,),
+                                subtitle: Text(doc['details'],maxLines: 6,),
                                 onTap: () {
                                   Navigator.push(
                                       context,
