@@ -50,6 +50,7 @@ void initState() {
     body: tabs[currentindex],
     bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.black
       ,
+      iconSize: 30,
       selectedFontSize: 10,unselectedFontSize: 8,items: const [
       BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.green,),label: ''),
       BottomNavigationBarItem(icon: Icon(Icons.school_rounded,color: Colors.green,),label: ''),
